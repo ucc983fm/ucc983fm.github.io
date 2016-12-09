@@ -1,0 +1,128 @@
+<style>
+body{
+	font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/* =========================================== */
+/* Intro Large Artwork Template                */
+/* =========================================== */
+
+.intro-widget {
+	float: left;
+	width: 480px;
+}
+
+
+/* =========================================== */
+/* Large Artwork Template                      */
+/* =========================================== */
+
+.large-widget {
+	display: block;
+	width: 300px;
+	height: 300px;
+	position: relative;
+	overflow: hidden;
+}
+
+.large-widget__image-wrapper {
+	background: #fff;
+}
+
+.large-widget__image {
+	display: block;
+	border-radius: 0.25em;
+
+	-webkit-box-shadow: 0 0.1em 0.1em -0.05em rgba(0,0,0,0.6);
+	   -moz-box-shadow: 0 0.1em 0.1em -0.05em rgba(0,0,0,0.6);
+	    -ms-box-shadow: 0 0.1em 0.1em -0.05em rgba(0,0,0,0.6);
+	     -o-box-shadow: 0 0.1em 0.1em -0.05em rgba(0,0,0,0.6);
+	        box-shadow: 0 0.1em 0.1em -0.05em rgba(0,0,0,0.6);
+
+	-webkit-transition: opacity ease-in-out 100ms;
+	   -moz-transition: opacity ease-in-out 100ms;
+	    -ms-transition: opacity ease-in-out 100ms;
+	     -o-transition: opacity ease-in-out 100ms;
+	        transition: opacity ease-in-out 100ms;
+}
+
+.large-widget:hover .large-widget__image {
+	opacity: 0.5;
+}
+
+.large-widget__details {
+	padding: 0.5em 1em;
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	font-size: 10px;
+	text-transform: uppercase;
+	color: #fff;
+	background: #000;
+	opacity: 0.75;
+
+	-webkit-transition: opacity ease-in-out 100ms;
+	   -moz-transition: opacity ease-in-out 100ms;
+	    -ms-transition: opacity ease-in-out 100ms;
+	     -o-transition: opacity ease-in-out 100ms;
+	        transition: opacity ease-in-out 100ms;
+}
+
+.large-widget:hover .large-widget__details {
+	opacity: 1;
+}
+
+
+/* ============================================ */
+/* Minimal Template                             */
+/* ============================================ */
+
+.minimal-widget {
+	display: inline-block;
+	background: #444;
+	padding: 0.25em;
+	color: #ccc;
+	text-decoration: none;
+	-webkit-font-smoothing: antialiased;
+}
+
+.minimal-widget__image {
+	display: block;
+	float: left;
+}
+
+.minimal-widget__details {
+	float: left;
+	font-size: 12px;
+	margin: 0 0.5em;
+}
+
+.minimal-widget__artist {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+body{
+	margin:0; padding:0;
+}
+</style>
+<body>
+<script type="text/template" id="lastFmWidget">
+  <a href="{ track.url }" class="large-widget" alt="View information on Last.fm">
+    <div class="large-widget__image-wrapper">
+      <img class="large-widget__image" src="{ track.image.extralarge }" alt="Album artwork">
+    </div>
+    <div class="large-widget__details">
+      <div>NOW PLAYING</div>
+      <div class="large-widget__artist">{ track.artist }</div>
+      <div class="large-widget__title">{ track.title }</div>
+    </div>
+  </a>
+</script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdn.rawgit.com/devteaminc/Last.fm-Now-Playing-Widget/master/jquery.lastfmnowplaying.js"></script>
+<script>
+$('#lastFmWidget').lastfmNowPlaying({
+	apiKey: '1da6cae35a5e9c2641e3ac529b474e83',
+	members: ['uccfm']
+});
+</script>
+</body>
