@@ -3,11 +3,18 @@ body{
 	padding:5vw;
 	background: url(quad.jpg) center center no-repeat; background-size:cover;
 }
-img, object{
-	display:block;
-	max-height: 200px;
+.imgcontainer{
+	text-align: center;
+}
+img, object, .np{
+	display:inline;
+	max-height: 300px;
 	max-width:85%;
-	margin: 2.5rem auto;
+	margin: 0 1.5rem;
+}
+.np{
+	width:300px;
+	height:300px;
 }
 form{
 	margin:0;
